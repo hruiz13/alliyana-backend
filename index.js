@@ -19,6 +19,7 @@ app.use(express.json());
 
 //rutas
 app.use('/api/residentes', require('./routes/residentes'));
+app.use('/api/calendario', require('./routes/calendario'));
 
 
 
