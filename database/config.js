@@ -2,7 +2,7 @@ const mysql = require('mysql');
 const {promisify} = require('util');
 
  const pool = mysql.createPool({
-        connectionLimit : 50,
+        connectionLimit : 1000,
         host: process.env.HOSTIP,
         user: process.env.USER_DB,
         password: process.env.PASS_DB,
