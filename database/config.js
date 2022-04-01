@@ -3,10 +3,13 @@ const {promisify} = require('util');
 
  const pool = mysql.createPool({
         connectionLimit : 1000,
-        host: process.env.HOSTIP,
-        user: process.env.USER_DB,
-        password: process.env.PASS_DB,
-        database: process.env.DB_NAME
+        connectTimeout  : 60 * 60 * 1000,
+        acquireTimeout  : 60 * 60 * 1000,
+        timeout         : 60 * 60 * 1000,
+        host            : process.env.HOSTIP,
+        user            : process.env.USER_DB,
+        password        : process.env.PASS_DB,
+        database        : process.env.DB_NAME
 })
 
 pool.getConnection((err, connection) => {
